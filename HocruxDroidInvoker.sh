@@ -51,12 +51,10 @@ sleep 5
 echo "Do you want to continue....[y/n]"
 read answer
 
-if [ "$answer" != "$(answer#[Nn])" ]; then
-	echo "Existing script....."
+if [ "$answer" != "${answer#[Nn]}" ]; then
+	echo "✩░▒▓▆▅▃▂▁ 𝐄 𝐗 𝐈 𝐓 𝐈 𝐍 𝐆   𝐒 𝐂 𝐑 𝐈 𝐏 𝐓 ▁▂▃▅▆▓▒░✩"
 	exit 1
 fi
-
-echo "Continuing with script......."
 
 #remaining code
 #

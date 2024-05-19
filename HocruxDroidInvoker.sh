@@ -149,3 +149,20 @@ echo
 echo
 echo "INSTALLING SPOTIFY"
 adb install spotify.apk
+
+cat <<"EOF"
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█░██░█░▄▀▄░█░██░█░▄▄██▄██▀▄▀
+█░▀▀░█░█▄█░█░██░█▄▄▀██░▄█░█▀
+█▀▀▀▄█▄███▄██▄▄▄█▄▄▄█▄▄▄██▄█
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+EOF
+
+echo "DOWNLOADING YMUSIC"
+aria2c -o ymusic.apk https://reaper-club-9a3fae922e27.herokuapp.com/23874/4374_ymusic_arm64.apk?hash=AgADSB
+echo
+echo
+echo "INSTALLING YMUSIC"
+adb install ymusic.apk

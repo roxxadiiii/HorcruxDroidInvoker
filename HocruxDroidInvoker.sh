@@ -68,3 +68,84 @@ cat <<"EOF"
 ░▒█░▒█░░▀▀░░▀▀▀░▀░▀▀░░▀▀▀░▀░▀░▒█▄▄█░▀░▀▀░░▀▀░░▀▀▀░▀▀░░▄█▄░▀░░▀░░░▀░░░░▀▀░░▀░▀░▀▀▀░▀░▀▀░▀▀░▀▀▀░▀░░▀
 
 EOF
+
+echo
+echo
+
+cat <<"EOF"
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▀██ ▀██ ██ ▄▄▀██ ▄▄▀██ ▄▄▄ █▄ ▄██ ▄▄▀████▄▄ ▄▄██ ▄▄▄ ██ ▄▄▄ ██ █████ ▄▄▄ 
+█ ▀▀ ██ █ █ ██ ██ ██ ▀▀▄██ ███ ██ ███ ██ █▄▄███ ████ ███ ██ ███ ██ █████▄▄▄▀▀
+█ ██ ██ ██▄ ██ ▀▀ ██ ██ ██ ▀▀▀ █▀ ▀██ ▀▀ ██████ ████ ▀▀▀ ██ ▀▀▀ ██ ▀▀ ██ ▀▀▀ 
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+EOF
+
+# Check if android-tools is installed
+if ! pacman -Qs android-tools >/dev/null; then
+	echo "android-tools is not installed. Installing..."
+	sudo pacman -S --noconfirm android-tools
+	if [ $? -ne 0 ]; then
+		echo "Failed to install android-tools. Exiting script."
+		exit 1
+	fi
+else
+	echo "android-tools is already installed."
+fi
+
+cat <<"EOF"
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▀██ ▄▄▀█▄ ▄█ ▄▄▀█ ▄ ██ ▄▄▀
+█ ▀▀ ██ ▀▀▄██ ██ ▀▀ ██▀▄██ ███
+█ ██ ██ ██ █▀ ▀█ ██ █ ▀▀██ ▀▀▄
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+EOF
+
+# Check if aria2 is installed
+if ! pacman -Qs aria2 >/dev/null; then
+	echo "aria2 is not installed. Installing..."
+	sudo pacman -S --noconfirm aria2
+	if [ $? -ne 0 ]; then
+		echo "Failed to install aria2. Exiting script."
+		exit 1
+	fi
+else
+	echo "aria2 is already installed."
+fi
+
+cat <<"EOF"
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█▀ ███ ▄▄▀██ ▄▀▄ ██ ▄▄ 
+██ ███ ██ ██ █ █ ██ ▀▀ 
+█▀ ▀██ ▀▀ ██ ███ ██ ███
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+EOF
+
+echo "DOWNLOADING 1DMP"
+aria2c -o 1dmp.apk https://reaper-club-9a3fae922e27.herokuapp.com/23858/1DM_v16-Mod.apk?hash=AgADlQ
+echo
+echo
+echo "INSTALLING 1DMP"
+adb insatll 1dmp.apk
+
+cat <<"EOF"
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██░▄▄▄░█▀▄▄▀█▀▄▄▀█▄░▄██▄██░▄▄█░██░
+██▄▄▄▀▀█░▀▀░█░██░██░███░▄█░▄██░▀▀░
+██░▀▀▀░█░█████▄▄███▄██▄▄▄█▄███▀▀▀▄
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+EOF
+
+echo "DOWNLOADING SPOTIFY"
+aria2c -o spotify.apk https://reaper-club-9a3fae922e27.herokuapp.com/23872/Spotify+v8.9.18.512+%5BAB+Sherlock%5D+%28Merged%29.apk?hash=AgADRx
+echo
+echo
+echo "INSTALLING SPOTIFY"
+adb install spotify.apk
